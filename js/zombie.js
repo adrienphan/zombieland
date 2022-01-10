@@ -25,9 +25,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         console.log(animationId);
         
-        if(zombie.position > zombie.positionMax){
+        if(zombie.position >= zombie.positionMax){
             zombieDiv.style.backgroundPositionX = zombie.positionMax;
             cancelAnimationFrame(animationId);
+            return;
         }
         setTimeout(function(){requestAnimationFrame(zombieAnim)}, zombie.delay);
     }
